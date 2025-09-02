@@ -184,9 +184,6 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 4. Test numerical accuracy and edge cases
 5. Ensure responsive design compatibility
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👨‍💻 Author
 
