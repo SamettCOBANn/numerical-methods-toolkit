@@ -191,8 +191,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Author
 
 **Samet ÇOBAN**  
-Student ID: 22220030078  
-Project: Numerical Methods Toolkit with Weather Data Integration
 
 ## 🙏 Acknowledgments
 
@@ -201,10 +199,6 @@ Project: Numerical Methods Toolkit with Weather Data Integration
 - NumPy and SciPy communities for robust numerical libraries
 - Educational institutions promoting practical mathematics education
 
-## 📞 Support
 
-If you have any questions or need support, please open an issue on GitHub or contact the development team.
-
----
 
 **⭐ Star this repository if you find it useful!**
