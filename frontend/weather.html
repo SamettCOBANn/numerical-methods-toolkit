@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hava Durumu Detay</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container" id="weather-container">
+        <div style="display:flex;align-items:center;justify-content:center;gap:1em;">
+            <h2 id="city-name"></h2>
+        </div>
+        <div id="weather-info"></div>
+        <label for="data-type-select" style="margin-top:1em;">Veri Türü Seç:</label>
+        <select id="data-type-select" style="margin:1em 0;">
+            <option value="temp">Sıcaklık</option>
+            <option value="humidity">Nem</option>
+            <option value="wind">Rüzgar</option>
+        </select>
+        <label for="method-select" style="margin-top:1em;">Numerical Method Seç:</label>
+        <select id="method-select" style="margin:1em 0;">
+            <option value="temp">Sıcaklık Değişimi (Varsayılan)</option>
+            <option value="error">Hata Yayılımı</option>
+            <option value="root">Kök Bulma</option>
+            <option value="interp">Interpolasyon</option>
+            <option value="diff">Sayısal Türev</option>
+            <option value="integral">Sayısal İntegral</option>
+        </select>
+        <button id="show-analysis" style="padding:0.5em 1em;font-size:1em;">Analizi Göster</button>
+        <canvas id="analysis-chart" style="display:none;max-width:400px;"></canvas>
+    </div>
+    <script src="weather.js"></script>
+</body>
+</html>

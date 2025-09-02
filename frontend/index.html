@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turkey Weather & Numerical Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="city-select-screen" class="centered-screen">
+        <div class="panel">
+            <h1>Select the City</h1>
+            <select id="city-select">
+                <option value="">Choose a city</option>
+            </select>
+        </div>
+    </div>
+    <div id="analysis-screen" class="analysis-layout" style="display:none;">
+        <div class="main-panel">
+            <div class="city-name-container">
+                <h2 id="city-name"></h2>
+            </div>
+            <button id="select-another-city">Select Another City</button>
+            <div class="weather-info-container">
+                <div class="weather-info">
+                    <span id="temp"></span>
+                    <span id="humidity"></span>
+                    <span id="wind"></span>
+                </div>
+            </div>
+            <label style="margin-top:2em;">Select Numerical Method:</label>
+            <div id="method-buttons" class="method-grid"></div>
+        </div>
+        <div class="side-panel">
+            <div id="method-desc" class="desc-card"></div>
+            <canvas id="analysis-chart" style="max-width:400px;"></canvas>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

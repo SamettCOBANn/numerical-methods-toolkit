@@ -1,0 +1,36 @@
+{
+  "name": "numerical-methods-toolkit",
+  "version": "1.0.0",
+  "description": "A comprehensive web-based numerical methods toolkit with real-time weather data integration",
+  "main": "frontend/index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "test": "echo \"No frontend tests specified\" && exit 0"
+  },
+  "keywords": [
+    "numerical-methods",
+    "weather-data",
+    "mathematics",
+    "education",
+    "web-application",
+    "javascript",
+    "python",
+    "data-visualization"
+  ],
+  "author": "Samet ÇOBAN <email@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/numerical-methods-toolkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/numerical-methods-toolkit/issues"
+  },
+  "homepage": "https://github.com/yourusername/numerical-methods-toolkit#readme",
+  "engines": {
+    "python": ">=3.8"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}

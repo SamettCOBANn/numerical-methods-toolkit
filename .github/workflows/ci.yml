@@ -1,0 +1,71 @@
+name: Numerical Methods Toolkit CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8, 3.9, "3.10", "3.11"]
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Lint with flake8
+      run: |
+        pip install flake8
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    
+    - name: Test Python modules
+      run: |
+        python -c "import backend.interpolation"
+        python -c "import backend.error_analysis"
+        python -c "import backend.numerical_diff"
+        python -c "import backend.numerical_integration"
+        python -c "import backend.root_finding"
+        python -c "import backend.linear_systems"
+        python -c "import backend.lu_decomposition"
+        python -c "import backend.optimization"
+        python -c "import backend.ode_solving"
+        python -c "import backend.performance_error"
+        python -c "import backend.visualization"
+        python -c "import backend.comparative_analysis"
+    
+    - name: Test HTTP Server
+      run: |
+        python -m http.server 8000 &
+        sleep 5
+        curl -f http://localhost:8000/frontend/index.html || exit 1
+        pkill -f "python -m http.server"
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./frontend
